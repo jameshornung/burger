@@ -8,10 +8,11 @@
 var connection = require('./connection.js');
 
 var orm = {
-	selectAll: function(){
-		var queryString = 'SELECT * FROM burgers';
+	selectAll: function(table, cb){
+		var queryString = 'SELECT * FROM ' + table + ';';
 		connection.query(queryString, function(err, result){
-			console.log(result);
+			if (err) throw err;
+			cb(result);
 		})
 	},
 	insertOne: function(table, burgerName, beenDevoured){
