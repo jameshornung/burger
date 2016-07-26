@@ -36,19 +36,15 @@
   {{/each}}
 </ul>
 
-<h2>This is all about cats, I should change that</h2>
-<form class="create-update-form" action="burgers/create" method="POST">
+<h2>Add a burger</h2>
+<form class="create-update-form" action="burgers/create" method="PUT">
 
   <div class="form-group">
-    <label for="flavor">Burger Name</label>
-    <input type="text" id="flavor" name="burger_name">
+    <label for="burgerName">Burger Name</label>
+    <input type="text" id="burgerName" name="burgerName">
   </div>
 
-  <div class="form-group">
-    <label for="slee">Sleepy?</label><br>
-    <input type="radio" name="sleepy" value="1" checked> Sleepy!<br>
-    <input type="radio" name="sleepy" value="0"> Awake
-  </div>
+  
 
-  <button type="submit">Add Cat</button>
+  <button type="submit">Add Burger</button>
 </form>

@@ -17,8 +17,25 @@ router.get('/', function (req, res) {
 router.get('/burgers', function (req, res) {
 	burger.all(function (data) {
 		var hbsObject = { burgers: data };
-		console.log(hbsObject);
+		// console.log(hbsObject);
 		res.render('index', hbsObject);
+	});
+});
+
+router.put('/create', function(req, res){
+	console.log('create ran');
+	burger.create( function(){
+		res.redirect('/burgers');
+	});
+});
+
+router.put('/burgers/update/:id', function (req, res) {
+	var condition = 'id = ' + req.params.id;
+
+	console.log('condition', condition);
+
+	burger.update({ devoured: req.body.devoured }, condition, function () {
+		res.redirect('/burgers');
 	});
 });
 

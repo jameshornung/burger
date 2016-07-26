@@ -10,17 +10,17 @@ var burger = {
 			cb(res);
 		});
 	},
-	// cols and vals are arrays
-	// create: function (cols, vals, cb) {
-	// 	orm.create('cats', cols, vals, function (res) {
-	// 		cb(res);
-	// 	});
-	// },
-	// update: function (objColVals, condition, cb) {
-	// 	orm.update('cats', objColVals, condition, function (res) {
-	// 		cb(res);
-	// 	});
-	// }
+	create: function (val) {
+		orm.insertOne(val, function (res) {
+			console.log('burger.js - activate');
+			cb(res);
+		});
+	},
+	update: function (objColVals, condition, cb) {
+		orm.updateOne('burgers', objColVals, condition, function (res) {
+			cb(res);
+		});
+	}
 };
 
 module.exports = burger;
