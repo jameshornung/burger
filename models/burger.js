@@ -10,9 +10,9 @@ var burger = {
 			cb(res);
 		});
 	},
-	create: function (val) {
-		orm.insertOne(val, function (res) {
-			console.log('burger.js - activate');
+	create: function (name, cb) {
+		console.log('creATE RAN');
+		orm.insertOne('burgers', burgerName, function (res) {
 			cb(res);
 		});
 	},

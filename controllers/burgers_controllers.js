@@ -22,9 +22,10 @@ router.get('/burgers', function (req, res) {
 	});
 });
 
-router.put('/create', function(req, res){
-	console.log('create ran');
-	burger.create( function(){
+router.post('burgers/create', function(req, res){
+	console.log(req.body.burger_name);
+	var burgerName = req.body.burger_name;
+	burger.create(req.body.burger_name, function(){
 		res.redirect('/burgers');
 	});
 });

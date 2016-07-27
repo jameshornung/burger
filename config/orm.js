@@ -28,13 +28,23 @@ var orm = {
 			cb(result);
 		})
 	},
-	insertOne: function(cb){
-		var queryString = "INSERT INTO burgers (burger_name) VALUES ('Whopper');";
-		connection.query(queryString, function(err, result){
-			// console.log(queryString);
-			// console.log(result);
+	insertOne: function (table, cols, vals, cb) {
+		console.log('insert');
+		var queryString = 'INSERT INTO ' + table;
+
+		queryString = queryString + ' (';
+		queryString = queryString + cols.toString();
+		queryString = queryString + ') ';
+		queryString = queryString + 'VALUES (';
+		queryString = queryString + burgerName;
+		queryString = queryString + ') ';
+
+		console.log(queryString);
+
+		connection.query(queryString, vals, function (err, result) {
+			if (err) throw err;
 			cb(result);
-		})
+		});
 	},
 	updateOne: function (table, objColVals, condition, cb) {
 		var queryString = 'UPDATE ' + table;
@@ -43,8 +53,9 @@ var orm = {
 		queryString = queryString + objToSql(objColVals);
 		queryString = queryString + ' WHERE ';
 		queryString = queryString + condition;
+		console.log(condition);
 
-		console.log(queryString);
+		// console.log(queryString);
 		connection.query(queryString, function (err, result) {
 			if (err) throw err;
 			cb(result);
