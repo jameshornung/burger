@@ -10,8 +10,8 @@ var burger = {
 			cb(res);
 		});
 	},
-	create: function (name, cb) {
-		console.log('creATE RAN');
+	create: function (col, name, cb) {
+		console.log('create ran');
 		orm.insertOne('burgers', burgerName, function (res) {
 			cb(res);
 		});
