@@ -28,19 +28,9 @@ var orm = {
 			cb(result);
 		})
 	},
-	insertOne: function (table, cols, vals, cb) {
-		console.log('insert');
-		var queryString = 'INSERT INTO ' + table;
-
-		queryString = queryString + ' (';
-		queryString = queryString + cols.toString();
-		queryString = queryString + ') ';
-		queryString = queryString + 'VALUES (';
-		queryString = queryString + burgerName;
-		queryString = queryString + ') ';
-
+	insertOne: function (table, burger_name, cb) {
+		var queryString = "INSERT INTO " + table + " (burger_name) VALUES ('" + burger_name + "')";
 		console.log(queryString);
-
 		connection.query(queryString, function (err, result) {
 			if (err) throw err;
 			cb(result);
