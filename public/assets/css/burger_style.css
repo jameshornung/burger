@@ -1,3 +1,46 @@
-body {
+body{
+	background-color: red;
 	color: yellow;
 }
+
+h1{
+	height: 200px;
+	text-align: center;
+}
+
+#pic{
+	width: 400px;
+	float: left;
+	margin-left: 40px;
+	margin-right: 40px;
+}
+
+#not-eaten{
+	width: 250px;
+	float: left;
+}
+
+#eaten{
+	width: 250px;
+	float: left;
+}
+
+#burger-display{
+	width: 80%;
+	margin-left: auto;
+	margin-right: auto;
+	overflow: auto;
+}
+
+#add-burger{
+	width: 100%;
+	float: left;
+}
+
+#input{
+	width: 400px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
