@@ -11,14 +11,14 @@ var source = {
 	},
 	jaws: {
 		port: 3306,
-        host: 'Mysql@l9dwvv6j64hlhpul.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306',
-        user: 'ewuqx1n5w8jo6x4v',
-        password: "yuhl98jsef0k7ul4",
-        database: "lghowl35ljxl5vao" 
+        host: 'g8r9w9tmspbwmsyo.cbetxkdyhwsb.us-east-1.rds.amazonaws.com',
+        user: 'y9cvwb8kybj2au7s',
+        password: "kidhs8m3rzm7l2y8",
+        database: "i69fnoqn0j5327jg" 
 	}
 };
 
-var connection = mysql.createConnection(source.jawsDB);
+var connection = mysql.createConnection(source.jaws);
 
 connection.connect(function (err) {
 	if (err) {
